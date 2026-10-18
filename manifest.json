@@ -1,9 +1,9 @@
 {
-  "versionCode": 1,
-  "versionName": "1.0.0",
-  "apkUrl": "https://github.com/Zarax34/felthah-update/releases/download/v1.0.0/app-release.apk",
-  "sha256": "0000000000000000000000000000000000000000000000000000000000000000",
-  "sizeBytes": 0,
+  "versionCode": 2,
+  "versionName": "1.0.1",
+  "apkUrl": "https://github.com/Zarax34/felthah-update/releases/download/v1.0.1/app-release.apk",
+  "sha256": "f2c358a721039cace288d7c90fa514e96173a74ad36e5a281ae2d7973b43294c",
+  "sizeBytes": 76870705,
   "mandatory": false,
-  "releaseNotes": "الإصدار الأول."
+  "releaseNotes": "\u0637\u00a3\u0638\u0679\u0638\u201a\u0638\u02c6\u0638\u2020\u0637\u00a9 \u0637\u00a7\u0638\u201e\u0637\u06be\u0637\u00b7\u0637\u00a8\u0638\u0679\u0638\u201a \u0637\u00a7\u0638\u201e\u0637\u00ac\u0637\u00af\u0638\u0679\u0637\u00af\u0637\u00a9\u0637\u0152 \u0638\u02c6\u0638\u2026\u0637\u00ad\u0637\u00af\u0638\u2018\u0637\u00ab \u0637\u00af\u0637\u00a7\u0637\u00ae\u0638\u201e \u0637\u00a7\u0638\u201e\u0637\u06be\u0637\u00b7\u0637\u00a8\u0638\u0679\u0638\u201a \u0638\u0679\u0637\u00b3\u0637\u06be\u0637\u00a3\u0638\u2020\u0638\u067e \u0637\u00a7\u0638\u201e\u0637\u06be\u0638\u2020\u0637\u00b2\u0638\u0679\u0638\u201e \u0637\u00a8\u0637\u00b9\u0637\u00af \u0637\u00a7\u0638\u201e\u0637\u00a7\u0638\u2020\u0638\u201a\u0637\u00b7\u0637\u00a7\u0637\u00b9."
 }
