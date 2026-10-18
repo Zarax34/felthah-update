@@ -1,9 +1,9 @@
 {
-  "versionCode": 2,
-  "versionName": "1.0.1",
-  "apkUrl": "https://github.com/Zarax34/felthah-update/releases/download/v1.0.1/app-release.apk",
-  "sha256": "f2c358a721039cace288d7c90fa514e96173a74ad36e5a281ae2d7973b43294c",
-  "sizeBytes": 76870705,
+  "versionCode": 3,
+  "versionName": "1.0.2",
+  "apkUrl": "https://github.com/Zarax34/felthah-update/releases/download/v1.0.2/app-release.apk",
+  "sha256": "ad7b1e974d3b44dc060ea86026eaf7c550a0968a2920bdb57aa705f876587e4c",
+  "sizeBytes": 77179179,
   "mandatory": false,
-  "releaseNotes": "أيقونة التطبيق الجديدة، ومحدّث داخل التطبيق يستأنف التنزيل بعد الانقطاع."
+  "releaseNotes": "رفع التقارير اليومية بلا اتصال ومزامنتها عند عودته، وإصلاح زر الرجوع، وأيقونة الانقطاع في الشريط العلوي، وشاشة عن التطبيق."
 }
