@@ -48,6 +48,8 @@ APK="$UPLOAD_DIR/app-release.apk"
 # --clobber يسمح بإعادة الرفع لو فشل الدفع في محاولة سابقة
 if gh release view "$TAG" --repo "$REPO" >/dev/null 2>&1; then
   gh release upload "$TAG" "$APK" --repo "$REPO" --clobber
+  # رفع فاشل سابق يترك مسودّة، ورابط أصل المسودّة 404
+  gh release edit "$TAG" --repo "$REPO" --draft=false --latest
 else
   gh release create "$TAG" "$APK" \
     --repo "$REPO" --title "$VERSION_NAME" --notes "${NOTES:-إصدار $VERSION_NAME}"
