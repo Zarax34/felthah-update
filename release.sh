@@ -39,11 +39,17 @@ echo "  sha256: $SHA"
 echo "  الحجم:  $((SIZE / 1048576)) م.ب"
 
 echo "▸ رفع الحزمة كأصل إصدار…"
+# اسم الأصل يُؤخذ من اسم الملف (ما بعد # وصفٌ فقط)، والرابط في البيان
+# يفترض app-release.apk، فنرفع نسخة بهذا الاسم
+UPLOAD_DIR=$(mktemp -d)
+trap 'rm -rf "$UPLOAD_DIR"' EXIT
+cp "$APK" "$UPLOAD_DIR/app-release.apk"
+APK="$UPLOAD_DIR/app-release.apk"
 # --clobber يسمح بإعادة الرفع لو فشل الدفع في محاولة سابقة
 if gh release view "$TAG" --repo "$REPO" >/dev/null 2>&1; then
-  gh release upload "$TAG" "$APK#app-release.apk" --repo "$REPO" --clobber
+  gh release upload "$TAG" "$APK" --repo "$REPO" --clobber
 else
-  gh release create "$TAG" "$APK#app-release.apk" \
+  gh release create "$TAG" "$APK" \
     --repo "$REPO" --title "$VERSION_NAME" --notes "${NOTES:-إصدار $VERSION_NAME}"
 fi
 
@@ -58,7 +64,7 @@ cat > manifest.json <<JSON
   "sha256": "$SHA",
   "sizeBytes": $SIZE,
   "mandatory": $MANDATORY,
-  "releaseNotes": $(printf '%s' "${NOTES:-تحسينات وإصلاحات.}" | python3 -c 'import json,sys; print(json.dumps(sys.stdin.read()))')
+  "releaseNotes": $(printf '%s' "${NOTES:-تحسينات وإصلاحات.}" | PYTHONUTF8=1 python3 -c 'import json,sys; print(json.dumps(sys.stdin.read()))')
 }
 JSON
 
