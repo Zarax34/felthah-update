@@ -6,7 +6,7 @@
 #   ./release.sh <مسار الحزمة> <versionCode> <versionName> ["ملاحظات"] [--mandatory]
 #
 # مثال:
-#   ./release.sh ~/app-release.apk 2 1.0.1 "إصلاح الإشعارات"
+#   ./release.sh ~/felthah.apk 2 1.0.1 "إصلاح الإشعارات"
 #
 # ما يفعله:
 #   1. يحسب بصمة sha256 وحجم الحزمة
@@ -40,11 +40,11 @@ echo "  الحجم:  $((SIZE / 1048576)) م.ب"
 
 echo "▸ رفع الحزمة كأصل إصدار…"
 # اسم الأصل يُؤخذ من اسم الملف (ما بعد # وصفٌ فقط)، والرابط في البيان
-# يفترض app-release.apk، فنرفع نسخة بهذا الاسم
+# يفترض felthah.apk، فنرفع نسخة بهذا الاسم
 UPLOAD_DIR=$(mktemp -d)
 trap 'rm -rf "$UPLOAD_DIR"' EXIT
-cp "$APK" "$UPLOAD_DIR/app-release.apk"
-APK="$UPLOAD_DIR/app-release.apk"
+cp "$APK" "$UPLOAD_DIR/felthah.apk"
+APK="$UPLOAD_DIR/felthah.apk"
 # --clobber يسمح بإعادة الرفع لو فشل الدفع في محاولة سابقة
 if gh release view "$TAG" --repo "$REPO" >/dev/null 2>&1; then
   gh release upload "$TAG" "$APK" --repo "$REPO" --clobber
@@ -62,7 +62,7 @@ cat > manifest.json <<JSON
 {
   "versionCode": $VERSION_CODE,
   "versionName": "$VERSION_NAME",
-  "apkUrl": "https://github.com/$REPO/releases/download/$TAG/app-release.apk",
+  "apkUrl": "https://github.com/$REPO/releases/download/$TAG/felthah.apk",
   "sha256": "$SHA",
   "sizeBytes": $SIZE,
   "mandatory": $MANDATORY,
